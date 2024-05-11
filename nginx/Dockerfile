@@ -3,7 +3,7 @@ FROM nginx:latest
 RUN apt-get -y update
 RUN apt-get -y install vim nginx
 
-RUN id -u nginx &>/dev/null
+# RUN id -u nginx &>/dev/null
 
 RUN useradd -r nginx
 
