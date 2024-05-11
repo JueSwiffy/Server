@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: paw_friends_nginx
+    image:
+      nginx:paw_friends_nginx
+    restart: always
+    build:
+        context: ./nginx
+        dockerfile: Dockerfile
+    ports:
+      - "80:80/tcp"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/project.conf:/etc/nginx/conf.d/project.conf:ro
+      - ./nginx:/var/lib/nginx
+      - ./nginx/tmp/client_body:/var/lib/nginx/tmp/client_body
+      - ./nginx/logs:/var/log/nginx  # Mount logs directory
+      - static_volume:/server/static
+    depends_on:
+      - paw_friends_server
+    environment:
+      - TZ=Asia/Seoul
+    stdin_open: true
+    tty: true
+    networks:
+      - backend
+
+  paw_friends_server:
+    container_name: paw_friends_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py check_create_superuser && gunicorn server.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - ./server:/server
+      - static_volume:/server/static
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.aws
+    working_dir: /server
+    expose:
+      - "8000"
+    networks:
+      - backend
+
+
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  static_volume:
