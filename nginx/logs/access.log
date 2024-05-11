@@ -226,3 +226,6 @@
 172.18.0.1 - - [12/May/2024:01:02:53 +0900] "GET /swagger/ HTTP/1.1" 200 2393 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
 172.18.0.1 - - [12/May/2024:01:02:53 +0900] "GET /cart.json HTTP/1.1" 404 2637 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
 172.18.0.1 - - [12/May/2024:01:02:53 +0900] "GET /swagger/?format=openapi HTTP/1.1" 200 515 "http://localhost/swagger/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [12/May/2024:01:06:37 +0900] "GET /swagger/ HTTP/1.1" 200 2393 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [12/May/2024:01:06:37 +0900] "GET /cart.json HTTP/1.1" 404 2637 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [12/May/2024:01:06:37 +0900] "GET /swagger/?format=openapi HTTP/1.1" 200 515 "http://localhost/swagger/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "-"
