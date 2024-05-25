@@ -1,0 +1,12 @@
+# sound-separation
+tensorflow
+soundfile
+numpy
+h5py
+pytz
+tzdata
+pandas
+matplotlib
+seaborn
+scikit-learn
+pillow
